@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <assert.h>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -25,6 +26,8 @@ struct VertexArrayElement
       case GL_FLOAT:
         return sizeof(GLfloat);
     }
+    assert(false);
+    return 0;
   }
 };
 class VertexArrayLayout
@@ -36,44 +39,6 @@ private:
 public:
   VertexArrayLayout();
 
-  std::vector<VertexArrrayElements> get_elements() { return m_elements; }
-  std::vector<VertexArrrayElements> get_stride() { return m_stride; }
-
-  template <typename T> // GL_BYTE
-  void push(uint32_t count);
-
-  template <> // GL_BYTE
-  void push<int8_t>(uint32_t count)
-  {
-    m_elements.push_back({ GL_BYTE, count, GL_FALSE });
-    m_stride += VertexArrayElement::get_size(GL_BYTE);
-  }
-
-  template <> // GL_UNSIGNED_BYTE
-  void push<uint8_t>(uint32_t count);
-  {
-    m_elements.push_back({ GL_UNSIGNED_BYTE, count, GL_FALSE });
-    m_stride += VertexArrayElement::get_size(GL_UNSIGNED_BYTE);
-  }
-
-  template <> // GL_INT
-  void push<int32_t>(uint32_t count)
-  {
-    m_elements.push_back({ GL_INT, count, GL_FALSE });
-    m_stride += VertexArrayElement::get_size(GL_INT);
-  }
-
-  template <> // GL_UNSIGNED_INT
-  void push<uint32_t>(uint32_t count)
-  {
-    m_elements.push_back({ GL_UNSIGNED_INT, count, true });
-    m_stride += VertexArrayElement::get_size(GL_UNSIGNED_INT);
-  }
-
-  template <> // GL_FLOAT
-  void push<float>(uint32_t count)
-  {
-    m_elements.push_back({ GL_FLOAT, count, true });
-    m_stride += VertexArrayElement::get_size(GL_FLOAT);
-  }
+  std::vector<VertexArrayElement> get_elements() const { return m_elements; }
+  uint32_t get_stride() const { return m_stride; }
 };

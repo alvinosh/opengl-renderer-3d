@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <iostream>
+
 #include "vertex_buffer_layout.hpp"
 #include "vertex_buffer.hpp"
 #include "error.hpp"
@@ -16,8 +18,8 @@ public:
   VertexArray();
   ~VertexArray();
 
-  void add_buffer(const& VertexBuffer, const& VertexBufferLayout);
+  void add_buffer(const VertexBuffer& vb, const VertexArrayLayout& vbl);
 
   void bind() const;
   void unbind() const;
-}
+};

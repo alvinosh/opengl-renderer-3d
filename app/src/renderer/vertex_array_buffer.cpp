@@ -2,8 +2,8 @@
 
 VertexArray::VertexArray()
 {
-  GLCALL(glGenVertexArrays(1, &VAO));
-  GLCALL(glBindVertexArray(VAO));
+  GLCALL(glGenVertexArrays(1, &m_id));
+  GLCALL(glBindVertexArray(m_id));
 }
 
 VertexArray::~VertexArray()
