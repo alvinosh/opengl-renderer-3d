@@ -1,0 +1,41 @@
+Date : 2022-02-07 19:47:58
+Directory : e:\dev\cpp\OpenGL\app\src
+Total : 15 files,  489 codes, 0 comments, 119 blanks, all 608 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         15 |        489 |          0 |        119 |        608 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                          |         15 |        489 |          0 |        119 |        608 |
+| renderer                                                   |         12 |        374 |          0 |         81 |        455 |
+| window                                                     |          2 |         67 |          0 |         21 |         88 |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                   | language | code       | comment    | blank      | total      |
++------------------------------------------------------------+----------+------------+------------+------------+------------+
+| e:\dev\cpp\OpenGL\app\src\main.cpp                         | C++      |         48 |          0 |         17 |         65 |
+| e:\dev\cpp\OpenGL\app\src\renderer\error.cpp               | C++      |         18 |          0 |          3 |         21 |
+| e:\dev\cpp\OpenGL\app\src\renderer\error.hpp               | C++      |          9 |          0 |          3 |         12 |
+| e:\dev\cpp\OpenGL\app\src\renderer\index_buffer.cpp        | C++      |         23 |          0 |          5 |         28 |
+| e:\dev\cpp\OpenGL\app\src\renderer\index_buffer.hpp        | C++      |         14 |          0 |          5 |         19 |
+| e:\dev\cpp\OpenGL\app\src\renderer\renderer.hpp            | C++      |          6 |          0 |          1 |          7 |
+| e:\dev\cpp\OpenGL\app\src\renderer\shader.cpp              | C++      |        111 |          0 |         20 |        131 |
+| e:\dev\cpp\OpenGL\app\src\renderer\shader.hpp              | C++      |         27 |          0 |          9 |         36 |
+| e:\dev\cpp\OpenGL\app\src\renderer\vertex_array_buffer.cpp | C++      |         34 |          0 |          7 |         41 |
+| e:\dev\cpp\OpenGL\app\src\renderer\vertex_array_buffer.hpp | C++      |         18 |          0 |          8 |         26 |
+| e:\dev\cpp\OpenGL\app\src\renderer\vertex_array_layout.hpp | C++      |         81 |          0 |         12 |         93 |
+| e:\dev\cpp\OpenGL\app\src\renderer\vertex_buffer.cpp       | C++      |         21 |          0 |          4 |         25 |
+| e:\dev\cpp\OpenGL\app\src\renderer\vertex_buffer.hpp       | C++      |         12 |          0 |          4 |         16 |
+| e:\dev\cpp\OpenGL\app\src\window\window.cpp                | C++      |         50 |          0 |         15 |         65 |
+| e:\dev\cpp\OpenGL\app\src\window\window.hpp                | C++      |         17 |          0 |          6 |         23 |
+| Total                                                      |          |        489 |          0 |        119 |        608 |
++------------------------------------------------------------+----------+------------+------------+------------+------------+

@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#include "vertex_buffer_layout.hpp"
+#include "vertex_array_layout.hpp"
 #include "vertex_buffer.hpp"
 #include "error.hpp"
 
