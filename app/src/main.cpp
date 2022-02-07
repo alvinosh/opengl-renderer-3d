@@ -31,9 +31,9 @@ main()
     1, 2, 3  // second triangle
   };
 
-  VertexArray va;
   VertexBuffer vb(vertices, 6 * 4 * sizeof(float));
 
+  VertexArray va;
   VertexArrayLayout layout;
   layout.push<float>(3);
   layout.push<float>(3);
@@ -41,8 +41,6 @@ main()
   va.add_buffer(vb, layout);
 
   IndexBuffer ib(indices, 6);
-
-  va.unbind();
 
   Shader basic(
     std::string("E:\\dev\\cpp\\OpenGL\\app\\res\\shaders\\basic.glsl"));
