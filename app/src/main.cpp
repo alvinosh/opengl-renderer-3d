@@ -8,11 +8,13 @@
 
 #include "renderer.hpp"
 #include "window.hpp"
-
+#include "input.hpp"
 int
 main()
 {
   Window window(600, 400, "My window", WindowMode::WINDOWED);
+
+  Input input(&window);
 
   Renderer3D renderer;
 
@@ -50,6 +52,12 @@ main()
 
   while (!window.ShouldClose()) {
     window.PollEvents();
+
+    if (input.IsKeyPressed(KeyCode::W))
+      std::cout << "W key pressed" << std::endl;
+
+    if (input.IsMouseButtonPressed(MouseCode::ButtonLeft))
+      std::cout << "Left button pressed" << std::endl;
 
     renderer.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
