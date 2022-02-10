@@ -12,9 +12,9 @@
 
 #include "error.hpp"
 
-std::string parse_shader_file(uint32_t type, const std::string file_path);
-uint32_t compile_shader(uint32_t type, std::string source);
-uint32_t create_program(uint32_t vs, uint32_t fs);
+std::string ParseShaderFile(uint32_t type, const std::string file_path);
+uint32_t CompileShader(uint32_t type, std::string source);
+uint32_t CreateProgram(uint32_t vs, uint32_t fs);
 
 class Shader
 {
@@ -26,11 +26,11 @@ public:
   Shader(std::string path);
   ~Shader();
 
-  void use();
+  void Use();
 
-  void set_bool(const char* name, bool value) const;
-  void set_int(const char* name, int32_t value) const;
-  void set_float(const char* name, float value) const;
+  void SetBool(const char* name, bool value) const;
+  void SetInt(const char* name, int32_t value) const;
+  void SetFloat(const char* name, float value) const;
 
-  uint32_t id();
+  uint32_t Id();
 };

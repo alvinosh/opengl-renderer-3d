@@ -12,8 +12,8 @@ public:
   IndexBuffer(const uint32_t* data, uint32_t count);
   ~IndexBuffer();
 
-  void bind() const;
-  void unbind() const;
+  void Bind() const;
+  void UnBind() const;
 
-  uint32_t get_count() const { return m_count; }
+  uint32_t GetCount() const { return m_count; }
 };

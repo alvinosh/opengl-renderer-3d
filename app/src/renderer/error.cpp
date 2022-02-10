@@ -3,14 +3,14 @@
 #include "error.hpp"
 
 void
-gl_clear_error()
+glClearError()
 {
   while (glGetError() != GL_NO_ERROR)
     ;
 }
 
 bool
-gl_log_error(const char* function, const char* file, int line)
+glLogError(const char* function, const char* file, int line)
 {
   while (GLenum err = glGetError()) {
     std::cout << "[OPENGL ERROR] (" << err << "): " << function << " " << file

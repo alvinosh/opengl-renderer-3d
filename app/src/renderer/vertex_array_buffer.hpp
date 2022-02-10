@@ -18,8 +18,8 @@ public:
   VertexArray();
   ~VertexArray();
 
-  void add_buffer(const VertexBuffer& vb, const VertexArrayLayout& vbl);
+  void AddBuffer(const VertexBuffer& vb, const VertexArrayLayout& vbl);
 
-  void bind() const;
-  void unbind() const;
+  void Bind() const;
+  void UnBind() const;
 };

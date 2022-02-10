@@ -1,5 +1,4 @@
 #!/bin/bash
 
-cd "E:\dev\cpp\OpenGL"
-echo "cherr ycute"
+cd "e:\dev\cpp\opengl"
 mingw32-make

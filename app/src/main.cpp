@@ -1,4 +1,3 @@
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -10,15 +9,15 @@
 #include "renderer.hpp"
 #include "window.hpp"
 
-const bool debug = false;
-
 int
 main()
 {
-  Window window(600, 400, "My window");
+  Window window(600, 400, "My window", WindowMode::WINDOWED);
+
+  Renderer3D renderer;
 
   float vertices[] = {
-    // positions         // colors
+    // positions       // colors
     0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 0.0f, // bottom right
     0.5f,  -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, // bottom left
     -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, // top
@@ -38,29 +37,25 @@ main()
   layout.push<float>(3);
   layout.push<float>(3);
 
-  va.add_buffer(vb, layout);
+  va.AddBuffer(vb, layout);
 
   IndexBuffer ib(indices, 6);
 
   Shader basic(
     std::string("E:\\dev\\cpp\\OpenGL\\app\\res\\shaders\\basic.glsl"));
 
-  if (debug) {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-  }
+#ifdef NDEBUG
+  renderer.Wireframe(true);
+#endif
 
-  while (!window.should_close()) {
-    window.poll_events();
+  while (!window.ShouldClose()) {
+    window.PollEvents();
 
-    GLCALL(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
-    GLCALL(glClear(GL_COLOR_BUFFER_BIT));
+    renderer.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
-    basic.use();
-    va.bind();
-    ib.bind();
-    GLCALL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0));
+    renderer.Draw(va, ib, basic);
 
-    window.swap_buffers();
+    window.SwapBuffers();
   }
   return 0;
 }

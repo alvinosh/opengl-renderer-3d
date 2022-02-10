@@ -32,7 +32,7 @@ project "App"
   targetdir ("./bin/" .. outputdir .. "/%{prj.name}")
   objdir ("./bin-int/" .. outputdir .. "/%{prj.name}")
 
-  files {"app/src/**.cpp", "app/vendor/glad/**.c"}
+  files {"app/src/**.cpp", "app/src/renderer/**.cpp" , "app/src/window/window.cpp", "app/vendor/glad/**.c"}
 
   includedirs {
     "%{IncludeDir.GLFW}",

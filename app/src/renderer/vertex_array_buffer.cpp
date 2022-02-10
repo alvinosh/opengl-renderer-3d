@@ -12,9 +12,9 @@ VertexArray::~VertexArray()
 }
 
 void
-VertexArray::add_buffer(const VertexBuffer& vb, const VertexArrayLayout& vbl)
+VertexArray::AddBuffer(const VertexBuffer& vb, const VertexArrayLayout& vbl)
 {
-  vb.bind();
+  vb.Bind();
   const std::vector<VertexArrayElement> elem = vbl.get_elements();
   uint32_t offset = 0;
   for (int i = 0; i < elem.size(); i++) {
@@ -31,13 +31,13 @@ VertexArray::add_buffer(const VertexBuffer& vb, const VertexArrayLayout& vbl)
 }
 
 void
-VertexArray::bind() const
+VertexArray::Bind() const
 {
   GLCALL(glBindVertexArray(m_id));
 }
 
 void
-VertexArray::unbind() const
+VertexArray::UnBind() const
 {
   GLCALL(glBindVertexArray(0));
 }

@@ -4,9 +4,9 @@
 #include <GLFW/glfw3.h>
 
 #define GLCALL(x)                                                              \
-  gl_clear_error();                                                            \
+  glClearError();                                                              \
   x;                                                                           \
-  gl_log_error(#x, __FILE__, __LINE__)
+  glLogError(#x, __FILE__, __LINE__)
 
-void gl_clear_error();
-bool gl_log_error(const char* function, const char* file, int line);
+void glClearError();
+bool glLogError(const char* function, const char* file, int line);
