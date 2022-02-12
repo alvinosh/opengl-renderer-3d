@@ -123,6 +123,19 @@ Shader::SetFloat(const char* name, float value) const
   GLCALL(glUniform1f(glGetUniformLocation(m_id, name), value));
 }
 
+void
+Shader::SetMat4(const char* name, const glm::mat4& value) const
+{
+  unsigned int mat_loc = glGetUniformLocation(m_id, name);
+  GLCALL(glUniformMatrix4fv(mat_loc, 1, GL_FALSE, glm::value_ptr(value)));
+}
+
+void
+Shader::SetVec3(const char* name, const glm::vec3& value) const
+{
+  GLCALL(glUniform3fv(glGetUniformLocation(m_id, name), 1, &value[0]));
+}
+
 uint32_t
 Shader::Id()
 {

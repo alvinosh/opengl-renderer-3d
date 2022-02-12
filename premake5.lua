@@ -20,6 +20,7 @@ workspace "OPENGL-TEMPLATE"
   IncludeDir = {}
   IncludeDir["GLFW"] = "app/vendor/GLFW/include/"
   IncludeDir["Khr"] = "app/vendor/KHR/include/"
+  IncludeDir["glm"] = "app/vendor/glm/"
   IncludeDir["Glad"] = "app/vendor/"
 
 project "App"
@@ -32,14 +33,16 @@ project "App"
   targetdir ("./bin/" .. outputdir .. "/%{prj.name}")
   objdir ("./bin-int/" .. outputdir .. "/%{prj.name}")
 
-  files {"app/src/**.cpp", "app/src/renderer/**.cpp" , "app/src/window/**.cpp", "app/vendor/glad/**.c"}
+  files {"app/src/**.cpp", "app/src/renderer/**.cpp" ,"app/src/scene/**.cpp" ,"app/src/window/**.cpp", "app/vendor/glad/**.c"}
 
   includedirs {
     "%{IncludeDir.GLFW}",
     "%{IncludeDir.Glad}",
     "%{IncludeDir.Khr}",
+    "%{IncludeDir.glm}",
     "app/src/renderer/",
-    "app/src/window/"
+    "app/src/window/",
+    "app/src/scene/"  
   }
   libdirs "vendor/GLFW/lib"
 

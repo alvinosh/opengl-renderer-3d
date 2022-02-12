@@ -9,6 +9,7 @@ class Renderer3D
 {
 public:
   void ClearColor(float r, float g, float b, float a);
+  void ClearDepth();
 
   void Draw(VertexArray& va, IndexBuffer& ib, Shader& shader);
 

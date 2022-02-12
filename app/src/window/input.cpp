@@ -30,3 +30,18 @@ Input::GetMouseY()
   glfwGetCursorPos(m_win->GetNativeWindow(), nullptr, &pos);
   return pos;
 }
+
+void
+Input::GetMouseDelta(double* deltax, double* deltay)
+{
+  if (m_firstmouse) {
+    m_lastmousex = GetMouseX();
+    m_lastmousey = GetMouseY();
+    m_firstmouse = false;
+  }
+
+  *deltax = GetMouseX() - m_lastmousex;
+  *deltay = m_lastmousey - GetMouseY();
+  m_lastmousex = GetMouseX();
+  m_lastmousey = GetMouseY();
+}

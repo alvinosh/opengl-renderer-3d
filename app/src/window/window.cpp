@@ -4,8 +4,8 @@ Window::Window(uint16_t width, uint16_t height, const char* title,
                WindowMode wm)
 {
   glfwInit();
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   m_WindowMode = wm;
@@ -40,6 +40,8 @@ Window::Window(uint16_t width, uint16_t height, const char* title,
   glfwSetWindowSizeCallback(m_GLFWwindow, Window::BufferResizeCB);
   glfwSetKeyCallback(m_GLFWwindow, Window::InputCB);
 
+  glEnable(GL_DEPTH_TEST);
+
   std::cout << glGetString(GL_VERSION) << std::endl;
 }
 
@@ -53,6 +55,13 @@ Window::ShouldClose() const noexcept
 
 {
   return glfwWindowShouldClose(m_GLFWwindow);
+}
+
+void
+Window::HideCursor(bool value)
+{
+  glfwSetInputMode(m_GLFWwindow, GLFW_CURSOR,
+                   value ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
 }
 
 void
@@ -71,6 +80,22 @@ void
 Window::SetResolution(uint32_t x, uint32_t y)
 {
   glViewport(0, 0, x, y);
+}
+
+int32_t
+Window::GetWidth() const
+{
+  int32_t res;
+  glfwGetWindowSize(m_GLFWwindow, &res, nullptr);
+  return res;
+}
+
+int32_t
+Window::GetHeight() const
+{
+  int32_t res;
+  glfwGetWindowSize(m_GLFWwindow, nullptr, &res);
+  return res;
 }
 
 void

@@ -23,8 +23,13 @@ public:
 
   void SetResolution(uint32_t x, uint32_t y);
 
+  int32_t GetWidth() const;
+  int32_t GetHeight() const;
+
   void SetWindowed(uint32_t width = 0, uint32_t height = 0);
   void SetFullscreen(uint32_t width = 0, uint32_t height = 0);
+
+  void HideCursor(bool value);
 
   static void BufferResizeCB(GLFWwindow* window, int widht, int height);
   static void InputCB(GLFWwindow* window, int key, int scancode, int action,

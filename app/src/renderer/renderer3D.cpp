@@ -8,6 +8,12 @@ Renderer3D::ClearColor(float r, float g, float b, float a)
 }
 
 void
+Renderer3D::ClearDepth()
+{
+  GLCALL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
+}
+
+void
 Renderer3D::Draw(VertexArray& va, IndexBuffer& ib, Shader& shader)
 {
   shader.Use();

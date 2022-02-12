@@ -10,7 +10,10 @@ private:
 
 public:
   IndexBuffer(const uint32_t* data, uint32_t count);
+  IndexBuffer();
   ~IndexBuffer();
+
+  void SetData(const uint32_t* data, uint32_t count);
 
   void Bind() const;
   void UnBind() const;

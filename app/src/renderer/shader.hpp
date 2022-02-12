@@ -10,6 +10,10 @@
 #include <iostream>
 #include <assert.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "error.hpp"
 
 std::string ParseShaderFile(uint32_t type, const std::string file_path);
@@ -31,6 +35,8 @@ public:
   void SetBool(const char* name, bool value) const;
   void SetInt(const char* name, int32_t value) const;
   void SetFloat(const char* name, float value) const;
+  void SetMat4(const char* name, const glm::mat4& value) const;
+  void SetVec3(const char* name, const glm::vec3& value) const;
 
   uint32_t Id();
 };
