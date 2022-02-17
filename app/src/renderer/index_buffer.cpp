@@ -20,14 +20,14 @@ IndexBuffer::~IndexBuffer()
 }
 
 void
-IndexBuffer::SetData(const uint32_t* data, uint32_t count)
+IndexBuffer::SetData(std::vector<uint32_t> indicies)
 {
 
-  m_count = count;
+  m_count = indicies.size();
 
-  GLCALL(glGenBuffers(1, &m_id));
   GLCALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_id));
-  GLCALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(uint32_t), data,
+  GLCALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+                      indicies.size() * sizeof(uint32_t), &indicies.front(),
                       GL_STATIC_DRAW));
 }
 

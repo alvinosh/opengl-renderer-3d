@@ -41,6 +41,10 @@ Window::Window(uint16_t width, uint16_t height, const char* title,
   glfwSetKeyCallback(m_GLFWwindow, Window::InputCB);
 
   glEnable(GL_DEPTH_TEST);
+  glEnable(GL_DEBUG_OUTPUT);
+
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
   std::cout << glGetString(GL_VERSION) << std::endl;
 }

@@ -16,7 +16,9 @@ Renderer3D::ClearDepth()
 void
 Renderer3D::Draw(VertexArray& va, IndexBuffer& ib, Shader& shader)
 {
+
   shader.Use();
+  va.Bind();
   ib.Bind();
   GLCALL(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, 0));
 }

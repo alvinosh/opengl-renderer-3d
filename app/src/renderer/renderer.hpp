@@ -7,3 +7,4 @@
 #include "vertex_array_layout.hpp"
 #include "vertex_array_buffer.hpp"
 #include "renderer3D.hpp"
+#include "texture.hpp"

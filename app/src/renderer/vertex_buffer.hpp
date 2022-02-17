@@ -12,8 +12,11 @@ private:
 
 public:
   VertexBuffer(const void* data, uint32_t size);
-  VertexBuffer(std::vector<Vertex> vert);
+  VertexBuffer();
+  VertexBuffer(std::vector<Vertex>& vert);
   ~VertexBuffer();
+
+  void SetData(std::vector<Vertex>& vert);
 
   void Bind() const;
   void UnBind() const;
